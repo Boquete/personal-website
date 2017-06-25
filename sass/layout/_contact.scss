@@ -1,0 +1,147 @@
+.contact {
+  background-image: url('../assets/background--contact.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  &__content {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100%;
+    .social {
+      display: flex;
+      flex-direction: row;
+      width: 40%;
+      margin-bottom: 50px;
+      &__icon {
+        width: 15%;
+        svg {
+          transition: opacity 300ms ease;
+          &:hover {
+            opacity: 0.3;
+            transition: opacity 300ms ease;
+          }
+        }
+      }
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+      color: #ffffff;
+      font-size: 0.9em;
+      font-weight: 500;
+      letter-spacing: 1px;
+      line-height: 1.8em;
+      width: 40%;
+      word-spacing: 4px;
+      &__field {
+        display: flex;
+        flex-direction: row;
+        textarea {
+          overflow-y: hidden;
+          padding: 0;
+          line-height: 1.8em;
+          resize: none;
+          height: 5em;
+          &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            line-height: 1.8em;
+          }
+          &::-moz-placeholder { /* Firefox 19+ */
+            line-height: 1.8em;
+          }
+          &:-ms-input-placeholder { /* IE 10+ */
+            line-height: 1.8em;
+          }
+          &:-moz-placeholder { /* Firefox 18- */
+            line-height: 1.8em;
+          }
+        }
+        input, textarea {
+          padding-left: 5px;
+          width: 100%;
+          font-weight: 300;
+          color: inherit;
+          font-family: inherit;
+          font-size: inherit;
+          background-color: transparent;
+          box-shadow: none;
+          border: none;
+        }
+        :focus {
+          outline: none;
+        }
+      }
+      button {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        box-sizing: border-box;
+        color: #fff;
+        display: block;
+        font-weight: 700;
+        max-width: 220px;
+        outline: none;
+        padding: 0;
+        margin-top: 5px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        input {
+          cursor: pointer;
+          font-size: 0.9em;
+          border: none;
+          background-color: transparent;
+          box-shadow: none;
+          font-weight: 700;
+          letter-spacing: 2px;
+          color: #fff;
+          text-transform: uppercase;
+          padding: 17px 50px;
+          position: relative;
+          white-space: nowrap;
+          z-index: 1;
+        }
+        :focus {
+          outline: none;
+        }
+        &:after {
+          background: $main-blue;
+          content: "";
+          height: 550%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          transform: translateX(-50%) translateY(-20%) rotate(70deg);
+          transition: all .5s ease-in-out;
+          width: 140%;
+        }
+        &:hover:after {
+          transform: translateX(-10%) translateY(-20%) rotate(70deg);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $break-medium) {
+  .contact {
+    background-image: url('../assets/background--contact-mobile.jpg');
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__content {
+      flex: 0;
+      .social {
+        margin-bottom: 15px;
+        justify-content: center;
+        width: 80%;
+      }
+      .form {
+        width: 80%;
+      }
+    }
+  }
+}

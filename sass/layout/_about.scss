@@ -1,0 +1,218 @@
+.about {
+  background: url('../assets/background--about.jpg') center;
+  background-attachment: fixed;
+  background-color: #141414;
+  background-size: cover;
+  display: flex;
+  min-height: 100%;
+  &__intro {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2em;
+    &--top {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      .dots {
+        height: 20em;
+        padding: 0 3em 0 4em;
+      }
+      h1 {
+        display: inline-block;
+        font-size: 7em;
+        font-weight: 900;
+      }
+    }
+    &--bottom {
+      box-sizing: border-box;
+      padding: 1em 0 1em 14em;
+      span {
+        color: $main-blue;
+        font-size: 0.9em;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      button {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: block;
+        font-weight: 700;
+        margin: 2em 0 0 0;
+        outline: none;
+        overflow: hidden;
+        padding: 17px 60px;
+        position: relative;
+        text-align: center;
+        text-transform: uppercase;
+        span {
+          color: #fff;
+          padding: 0;
+          position: relative;
+          white-space: nowrap;
+          z-index: 1;
+        }
+        &:after {
+          background: $main-blue;
+          content: "";
+          height: 490%;
+          left: 0;
+          position: absolute;
+          top: 0;
+          transform: translateX(-50%) translateY(-20%) rotate(70deg);
+          transition: all .5s ease-in-out;
+          width: 140%;
+        }
+        &:hover:after {
+          transform: translateX(-10%) translateY(-20%) rotate(70deg);
+        }
+      }
+    }
+  }
+  &__scroll {
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    text-align: center;
+    transition: all 500ms ease;
+    width: 100%;
+    @media screen and (max-height: 610px) {
+      display: none;
+    }
+  }
+  .dots-scroll {
+    height: 4em;
+  }
+  .mouse {
+    height: 2em;
+    margin: 1em 0 1em 0;
+    &:hover {
+      opacity: 0.7;
+      transition: all 500ms ease;
+    }
+  }
+  &__description {
+    align-items: center;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 8em;
+    p {
+      font-size: 0.9em;
+      font-weight: 400;
+      letter-spacing: 1px;
+      line-height: 1.8em;
+      text-align: center;
+      width: 40%;
+      word-spacing: 4px;
+    }
+    img {
+      margin-top: 4em;
+      width: 20%;
+    }
+    .dots {
+      height: 30vh;
+      margin-top: -4vh;
+      position: absolute;
+      top: 0;
+    }
+  }
+  &__sidetext {
+    bottom: 0;
+    display: inline-block;
+    line-height: 4.4em;
+    overflow: hidden;
+    padding-left: 3px;
+    position: absolute;
+    right: 0;
+    transform: rotate(270deg) translateX(100%);
+    transform-origin: 100% 100%;
+    h2 {
+      font-size: 5em;
+      span {
+        color: $main-blue;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $break-medium) {
+  .about {
+    flex-direction: column;
+    background-attachment: scroll;
+    justify-content: center;
+    &__scroll {
+      .dots-scroll {
+        display: none;
+      }
+    }
+    &__intro {
+      flex: 0;
+      padding-top: 0;
+      .lines {
+        position: absolute;
+        width: 10%;
+      }
+      &--top {
+        justify-content: center;
+        .dots {
+          display: none;
+        }
+        h1 {
+          text-align: center;
+          font-size: 5em;
+          padding: 0 10px 0 10px;
+        }
+      }
+      &--bottom {
+        padding: 1em 0 0 4em;
+        display: none;
+      }
+    }
+    &__description {
+      padding-top: 0;
+      flex: 0;
+      .dots {
+        display: none;
+      }
+      p {
+        width: 80%;
+      }
+      img {
+        margin-top: 0;
+        width: 15%;
+      }
+    }
+    &__sidetext {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: $break-small) {
+  .about {
+    &__intro {
+      &--top {
+        h1 {
+          font-size: 3.5em;
+        }
+      }
+    }
+    &__description {
+      img {
+        width: 30%;
+      }
+    }
+    &__scroll {
+      display: none;
+    }
+  }
+}

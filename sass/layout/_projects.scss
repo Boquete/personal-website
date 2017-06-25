@@ -1,0 +1,130 @@
+.projects {
+  background: url('../assets/background--projects.jpg');
+  background-color: #141414;
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+  &__cards {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em 0;
+    transition: all 500ms ease;
+    :first-child {
+      :first-child {
+        filter: brightness(80%) grayscale(0);
+      }
+    }
+    .card {
+      width: 100%;
+      text-align: center;
+      img {
+        width: 40%;
+        padding: 3px;
+        transform: scale(1);
+        transition: .3s ease-in-out;
+        filter: brightness(80%) grayscale(100%);
+        &:hover {
+          filter: brightness(100%) grayscale(0%);
+        }
+      }
+    }
+  }
+  &__hidden {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000000;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease;
+    width: 50%;
+    margin-left: 50%;
+    height: 100%;
+    position: absolute;
+    .close {
+      text-align: right;
+      right: 1em;
+      padding: 1em;
+      position: absolute;
+      text-transform: uppercase;
+      img {
+        padding: 0.5em;
+        height: 1em;
+        &:hover {
+          transition: all 500ms ease;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    text-align: center;
+    height: 100%;
+    overflow-y: auto;
+    flex-direction: column;
+    .dots {
+      height: 3em;
+    }
+    .preview {
+      margin: 0 auto 1em auto;
+      width: 100%;
+      box-shadow: 0 0 59px -13px rgba(1, 59, 255, 0.67);
+    }
+    .projects__description {
+      width: 60%;
+      margin: 0 auto;
+      display: none;
+      padding-bottom: 1em;
+      h3 {
+        font-size: 1.5em;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin: 1em 0;
+        text-transform: uppercase;
+        font-family: 'Montserrat', sans-serif;
+      }
+      p {
+        margin-top: 1em;
+        font-size: 0.9em;
+        font-weight: 400;
+        letter-spacing: 1px;
+        line-height: 1.8em;
+        text-align: center;
+        word-spacing: 4px;
+      }
+      a {
+        display: block;
+        color: $main-blue;
+        margin-top: 1em;
+        letter-spacing: 1px;
+        word-spacing: 4px;
+        &:hover {
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $break-medium) {
+  .projects {
+    background-image: url('../assets/background--projects-mobile.jpg');
+    flex-direction: column;
+    justify-content: center;
+    &__cards {
+      flex: 0;
+    }
+    &__hidden {
+      width: 100%;
+      margin-left: 0;
+    }
+    &__content {
+      margin-right: 18px;
+      .projects__description {
+        width: 80%;
+      }
+    }
+  }
+}
