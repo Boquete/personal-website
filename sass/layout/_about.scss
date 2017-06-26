@@ -123,6 +123,10 @@
       margin-top: -4vh;
       position: absolute;
       top: 0;
+      width: auto;
+      @-moz-document url-prefix() { // Sorry firefox #todo
+        display: none;
+      }
     }
   }
   &__sidetext {
