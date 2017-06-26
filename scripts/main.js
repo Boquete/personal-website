@@ -139,20 +139,22 @@ var projectsTitle = getClass('projects').getElementsByClassName('title')[0];
 projects.forEach(function (entry) {
     entry.addEventListener('click', function () {
         var projectDescription = getClass(entry.getAttribute('class') + '__description');
+        if (document.body.clientWidth < 1100) {
+            getClass('projects').style.justifyContent = 'flex-start';
+            displayElement(projectsTitle, 0, 'hidden', 'none');
+        }
         displayElement(projectsHidden, 1, 'visible');
         displayElement(projectDescription, 1, 'visible', 'block');
         displayElement(projectsCard, 0, 'hidden', 'none');
-        if (document.body.clientWidth < 1100) {
-            displayElement(projectsTitle, 0, 'hidden');
-        }
         document.querySelectorAll('.title, .close').forEach(function (entry) {
             entry.addEventListener('click', function () {
+                if (document.body.clientWidth < 1100) {
+                    displayElement(projectsTitle, 1, 'visible', 'block');
+                    getClass('projects').style.justifyContent = 'center';
+                }
                 displayElement(projectDescription, null, null, 'none');
                 displayElement(projectsHidden, 0, 'hidden');
                 displayElement(projectsCard, 1, 'visible', 'flex');
-                if (document.body.clientWidth < 1100) {
-                    displayElement(projectsTitle, 1, 'visible');
-                }
             }, false);
         });
     }, false);
