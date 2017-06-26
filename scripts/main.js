@@ -141,7 +141,7 @@ projects.forEach(function (entry) {
         var projectDescription = getClass(entry.getAttribute('class') + '__description');
         displayElement(projectsHidden, 1, 'visible');
         displayElement(projectDescription, 1, 'visible', 'block');
-        displayElement(projectsCard, 0, 'hidden');
+        displayElement(projectsCard, 0, 'hidden', 'none');
         if (document.body.clientWidth < 1100) {
             displayElement(projectsTitle, 0, 'hidden');
         }
@@ -149,7 +149,7 @@ projects.forEach(function (entry) {
             entry.addEventListener('click', function () {
                 displayElement(projectDescription, null, null, 'none');
                 displayElement(projectsHidden, 0, 'hidden');
-                displayElement(projectsCard, 1, 'visible');
+                displayElement(projectsCard, 1, 'visible', 'flex');
                 if (document.body.clientWidth < 1100) {
                     displayElement(projectsTitle, 1, 'visible');
                 }
