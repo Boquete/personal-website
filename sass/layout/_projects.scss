@@ -4,9 +4,13 @@
   background-size: cover;
   background-position: center;
   overflow-x: hidden;
+  .title {
+    width: 50%;
+    flex: none;
+  }
   &__cards {
     display: flex;
-    flex: 1;
+    width: 50%;
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -39,7 +43,7 @@
     opacity: 0;
     transition: all 1s ease;
     width: 50%;
-    margin-left: 50%;
+    right: 0;
     height: 100%;
     position: absolute;
     .close {
@@ -113,8 +117,11 @@
     background-image: url('../assets/background--projects-mobile.jpg');
     flex-direction: column;
     justify-content: center;
+    .title {
+      width: 100%;
+    }
     &__cards {
-      flex: 0;
+      width: 100%;
     }
     &__hidden {
       width: 100%;
